@@ -1,0 +1,41 @@
+<article class="max-w-xl prose">
+    <div id="posts-container" class="grid grid-cols-3 items-center gap-4">
+        {{ collection:blog_posts limit='3' }}
+        <div class="flex flex-col bg-black rounded text-white p-4">
+            <span class="text-center">{{ title }}</span>
+            <span>{{ content }}</span>
+        </div>
+        {{ /collection:blog_posts}}
+    </div>
+    <div class="text-center mt-20">
+        <a id="load-more" href="#" class="bg-black text-white p-4">Load more</a>
+    </div>
+</article>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    let offset = 3; // Initial offset based on the initial limit
+
+    $("#load-more").click(function () {
+        $.ajax({
+            url: "/load-more-posts",
+            type: "GET",
+            data: { offset: offset, limit: 3 },
+            success: function (response) {
+                let postsContainer = $("#posts-container");
+                response.forEach(function (post) {
+                    let postHtml = `
+                        <div class="flex flex-col bg-black rounded text-white p-4">
+                            <span class="text-center">${post.title}</span>
+                            <span>${post.content}</span>
+                        </div>`;
+                    postsContainer.append(postHtml);
+                });
+                offset += 3; // Update offset for next load
+            },
+            error: function (xhr, status, error) {
+                console.error(error);
+            },
+        });
+    });
+</script>

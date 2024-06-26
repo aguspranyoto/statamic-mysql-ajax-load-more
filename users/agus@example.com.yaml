@@ -1,0 +1,6 @@
+super: true
+name: agus
+id: 92abf3f0-e18e-4d2b-b8f6-b455b99308d5
+password_hash: $2y$12$HKtV9NVH4S9B/XFmcE6z/.3roMldzOUZWFnyGDFlb33V0BIWfrZ3W
+preferences:
+  theme: light
