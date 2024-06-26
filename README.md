@@ -1,9 +1,9 @@
 ## Screenshots
 Before:
-![Before](./assets/before-load-more.png)
+![Before](./public/assets/before-load-more.png)
 
 After:
-![After](./assets/after-load-more.png)
+![After](./public/assets/after-load-more.png)
 
 
 <p align="center"><img src="https://statamic.com/assets/branding/Statamic-Logo+Wordmark-Rad.svg" width="400" alt="Statamic Logo" /></p>
