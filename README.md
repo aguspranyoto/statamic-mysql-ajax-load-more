@@ -1,8 +1,8 @@
-## Screenshots
-Before:
-![Before](./public/assets/before-load-more.png)
+##Overview
+Load more blog posts without reload page
 
-After:
+## Screenshots
+![Before](./public/assets/before-load-more.png)
 ![After](./public/assets/after-load-more.png)
 
 
